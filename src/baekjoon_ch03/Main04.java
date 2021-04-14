@@ -1,15 +1,13 @@
 package baekjoon_ch03;
 // 15552 : 빠른 A+B
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 public class Main04 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringBuilder sb = new StringBuilder();
 		StringTokenizer st;
 		int t = Integer.parseInt(br.readLine());
 		int arr[][] = new int[t][2];
@@ -22,10 +20,9 @@ public class Main04 {
 		}
 		for(int i=0; i<t; i++) {
 			sum[i] = arr[i][0] +  arr[i][1];
-			bw.write(sum[i] + "\n");
+			sb.append(sum[i]).append("\n");
 		}
 		br.close();
-		bw.flush();
-		bw.close();
+		System.out.println(sb);
 	}
 }
