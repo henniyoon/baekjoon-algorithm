@@ -26,12 +26,6 @@ public class Main03 {
 			
 			temp = second + b%10;
 			count++;
-//			System.out.println("first:" + first);
-//			System.out.println("second:" + second);
-//			System.out.println("b:" +b);
-//			System.out.println("temp:" + temp);
-//			System.out.println("count:" + count);
-//			if(count == 60) break;
 			// 입력 받은 수와 계산 한 수가 같아지면 반복문 나가기
 			if(Integer.parseInt(a) == Integer.parseInt(temp)) break;
 		}
