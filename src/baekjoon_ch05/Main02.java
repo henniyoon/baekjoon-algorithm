@@ -1,11 +1,10 @@
 package baekjoon_ch05;
 // 2562 : 최대값
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main02 {
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		int arr[] = new int[9];
