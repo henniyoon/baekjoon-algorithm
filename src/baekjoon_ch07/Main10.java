@@ -12,8 +12,8 @@ public class Main10 {
 		int n = Integer.parseInt(br.readLine());	// 단어의 개수 n개 입력
  
 		for (int i = 0; i < n; i++) {
-			if (check()) {
-				count++;
+			if (check()) {	// 그룹단어일 때 true
+				count++;	// 그룹단어의 개수 +1
 			}
 		}
 		sb.append(count);
@@ -33,15 +33,11 @@ public class Main10 {
 					check[now - 'a'] = true;	// true로 변경
 					prev = now;					
 				}
-				else {
-					return false;	
+				else {	// check[now - 'a'] = true : 이전에 나온적 있는 알파벳이면
+					return false;	// 그룹단어가 아니므로 false를 return
 				}
 			}
-			for(int j=0; j<check.length; j++) {
-				sb.append(j).append(":").append(check[j]).append("\n");
-			}
 		} 
-	
-		return true;
+		return true;	// 그룹단어는 true를 return
 	}
 }
