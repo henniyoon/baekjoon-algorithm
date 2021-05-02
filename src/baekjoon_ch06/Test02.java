@@ -2,37 +2,30 @@ package baekjoon_ch06;
 // 4673 : 셀프 넘버
 public class Test02 {
 	public static void main(String[] args) {
- 
-		boolean[] check = new boolean[10001];	// 1부터 10000이므로
- 
-		for (int i = 1; i < 10001; i++){
-			int n = d(i);
+		StringBuilder sb = new StringBuilder();
 		
-			if(n < 10001){	// 10000 이 넘는 수는 필요가 없음
-				check[n] = true;
+		boolean[] check = new boolean[10001];	// 0은 안쓰지만 포함해서 0~10000까지 : 10001개
+		for (int i = 1; i <= 10000; i++){
+			int n = d(i);
+	
+			if(n <= 10000){	// 10000 이하의 생성자로 만들어진 수
+				check[n] = true;	// true 로 저장
 			}
 		}
- 
-		StringBuilder sb = new StringBuilder();
-        
-		for (int i = 1; i < 10001; i++) {
-			if (!check[i]) {	// false 인 인덱스만 출력
+		for (int i = 1; i <= 10000; i++) {
+			if (!check[i]) {	// 기본값이 false, 저장되지 않은 수들 : 셀프넘버
 				sb.append(i).append('\n');
 			}
 		}
 		System.out.println(sb);
 	}
- 
- 
- 
-	public static int d(int number){
-		int sum = number;
-    
-		while(number != 0){
-			sum = sum + (number % 10); // 첫 째 자리수
-			number = number/10;	// 10을 나누어 첫 째 자리를 없앤다
+		
+	public static int d(int n) {	// n을 생성자로 하는 d(n) 수열을 만드는 함수
+		int sum = n;
+		while(n != 0) {
+			sum += n % 10;	// 일의 자리 수
+			n = n/10;	// n을 10으로 나누어 이미 더한 일의 자리 수를 없애기
 		}
-    
 		return sum;
 	}
 }    
