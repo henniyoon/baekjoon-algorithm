@@ -14,7 +14,7 @@ public class Main04_1 {
 		int b = Integer.parseInt(st.nextToken());;	// 밤에 자는 동안 미끄러지는 거리 b 미터
 		int v = Integer.parseInt(st.nextToken());;	// 나무 막대의 높이 v 미터
 		
-		int day = (v - b) / (a - b);
+		int day = (v - b) / (a - b);	// 높이 - 미끄러짐 / 올라감 - 미끄러짐
 		if((v - b) % (a - b) != 0) {
 			day++;
 		}
