@@ -1,5 +1,5 @@
 package baekjoon_ch08;
-
+// 1193 : 분수찾기
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
