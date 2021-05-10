@@ -15,8 +15,8 @@ public class Main04_1 {
 		int v = Integer.parseInt(st.nextToken());;	// 나무 막대의 높이 v 미터
 		
 		int day = (v - b) / (a - b);	// 높이 - 미끄러짐 / 올라감 - 미끄러짐
-		if((v - b) % (a - b) != 0) {
-			day++;
+		if((v - b) % (a - b) != 0) { 	// 나머지가 0이 아닌 경우
+			day++;	// 하루를 다 쓰지 않고 높이까지 도달했지만 그래도 + 1일
 		}
 		
 		sb.append(day);
