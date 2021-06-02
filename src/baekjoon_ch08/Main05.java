@@ -23,9 +23,16 @@ public class Main05 {
 			w = Integer.parseInt(st.nextToken());
 			n = Integer.parseInt(st.nextToken());
 			
-			x = n / h + 1;
+			x = (n / h) + 1;
 			y = n % h;
 			
+			if(y == 0) {
+				x = n / h;
+				y = h;
+			}
+			
+//			sb.append(h).append(" ").append(w).append(" ").append(n).append("\n");
+//			sb.append(y).append(" ").append(x).append("\n");
 			sb.append(y * 100 + x).append("\n");
 		}
 		System.out.println(sb);
