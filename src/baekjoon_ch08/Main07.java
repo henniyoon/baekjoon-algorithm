@@ -5,21 +5,28 @@ import java.io.InputStreamReader;
 
 public class Main07 {
 	public static void main(String[] args) throws Exception {
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
+		StringBuilder sb = new StringBuilder();
 		
-		if (N == 4 || N == 7) {
-			System.out.println(-1);
+		int n = Integer.parseInt(br.readLine());	// 배달하는 설탕의 양(kg)
+		int result = 0;	// 배달하는 설탕 봉지 수
+		
+		while(true) {
+			// 5의 배수인 경우
+			if(n % 5 == 0) {	
+				result = result + n / 5;
+				break;
+			}
+			// 5의 배수가 아닌 경우
+			n = n - 3;		// 3키로 빼고
+			result++;		// 3키로 봉지 + 1
+			
+			if(n < 0) {
+				result = -1;
+				break;
+			}
 		}
-		else if (N % 5 == 0) {
-			System.out.println(N / 5);
-		}
-		else if (N % 5 == 1 || N % 5 == 3) {
-			System.out.println((N / 5) + 1);
-		}
-		else if (N % 5 == 2 || N % 5 == 4) {
-			System.out.println((N / 5) + 2);
-		}
+		sb.append(result);
+		System.out.println(sb);
 	}
 }
