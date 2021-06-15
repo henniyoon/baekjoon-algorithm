@@ -16,22 +16,28 @@ public class Main02 {
 		int min = 0;	// 최솟값
 		int sum = 0;	// 소수의 합
 		
-		make_prime(N);
-		for(int i=M; i<=N; i++) {
+		make_prime(N);	// 0부터 N까지 소수를 체크하는 배열 생성
+		
+		// 소수의 최솟값
+		for(int i = M; i <= N; i++) {
 			if(prime[i] == false) {	// 소수이면
 				min = i;
 				break;
 			}
 		}
-		for(int i=M; i<=N; i++) {
+		
+		// M이상 N이하의 소수들의 합
+		for(int i = M; i <= N; i++) {
 			if(prime[i] == false) {
 				sum += i;
 			}
 		}
+		
 		if(min == 0) {	// 범위 내에 소수가 없으면
 			sb.append(-1);
 		} else {		// 범위 내에 소수가 있으면
-			sb.append(sum).append("\n").append(min).append("\n");
+			sb.append(sum).append("\n");
+			sb.append(min).append("\n");
 		}
 		System.out.println(sb);
 	}
@@ -41,6 +47,7 @@ public class Main02 {
 		prime = new boolean[n + 1];	// 0 ~ n
  
 		if(n < 2) {	// n이 2 미만이면 만들 소수가 없으므로 바로 return
+			prime[0] = prime[1] = true;
 			return;
 		}
 		prime[0] = prime[1] = true;
