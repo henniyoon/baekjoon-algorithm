@@ -23,15 +23,21 @@ public class Main09 {
             }
 
             int max = x;
+            int a = y;
+            int b = z;
 
             if (y > max) {
                 max = y;
+                a = x;
+                b = z;
             }
             if (z > max) {
                 max = z;
+                a = x;
+                b = y;
             }
 
-            if (max * max == Math.min(x, y) * Math.min(x, y) + Math.min(y, z) * Math.min(y, z)) {
+            if (max * max == a * a + b * b) {
                 sb.append("right").append("\n");
             } else {
                 sb.append("wrong").append("\n");
